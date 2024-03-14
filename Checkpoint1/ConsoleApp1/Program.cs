@@ -52,6 +52,7 @@ public class Sistema
         foreach(Aluno aluno in ListaDeAlunos)
         {
             Console.WriteLine("\nAluno " + aluno.Nome + "\nIdade " + aluno.Idade + "\nPeriodo " + aluno.Periodo + "\nMatricula: ");
+            aluno.Apresentar();
         }
     }
 
@@ -89,7 +90,12 @@ internal class Aluno : Pessoa
     {
         this.Periodo = periodo;
         this.NumeroMatricula = matricula;
-    } 
+    }
+
+    public override void Apresentar()
+    {
+        Console.WriteLine($"Me chamo {this.Nome}, tenho {this.Idade} anos e estou cursando o {this.Periodo}");
+    }
 }   
 
 public class Professor : Pessoa
